@@ -1,0 +1,80 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --color-back : #000000;
+    --color-btn: #1d351f;
+    --color-text: #ffffff;
+}
+
+body{
+    font-family: 'Signika Negative';
+    font-weight: 700;
+    font-size: 62.5%;
+    background-color: var(--color-back);
+}
+
+.container{
+    padding: 1rem 1rem;
+}
+
+.calculator form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator :nth-child(1) input[type='text']{
+    width: 22rem;
+    height: 7rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+    padding: 0 1rem;
+    border: none;
+    outline: 0;
+    border-radius: 1rem;
+    text-overflow: ellipsis;
+    background-color: #03640b;
+    color: #09cf1a;
+}
+
+.calculator form input[type='button']{
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    outline: 0;
+    background-color: var(--color-btn);
+    color: var(--color-text);
+    padding: 2rem 2.5rem; 
+    border-radius: 100%;
+    margin: 0.5rem;
+}
+form .dot :nth-child(3){
+    padding: 2rem 2rem !important;
+}
+
+form .mul input{
+    padding: 1rem 4rem !important;
+    margin: 0.5rem !important;
+    border-radius: 0.5rem !important;
+}
+
+form .zarb input{
+    padding: 1rem 4rem !important;
+    margin: 0.5rem !important;
+    border-radius: 0.5rem !important;
+}
+
+form input[value="="]{
+    padding: 1rem 9rem !important;
+    border-radius: 0.5rem !important;
+}
+
+

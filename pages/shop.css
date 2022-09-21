@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /*colors*/
+  --color-main: #051256;
+  --color-tetx: #ffffff;
+  --color-btn: linear-gradient(0deg, #2446fa 0%, #1b00bf 100%);
+  --color-humber: #a1a5f1;
+  --color-footer: #00072c;
+
+  /*btn*/
+  --btn-padding: 0.5rem 3.591rem;
+
+  /*Header*/
+  --nav-fontsize: 1.2rem;
+  --nav-fontweight: 600;
+  --nav-hoverborder-stork: 0.4rem;
+  --nav-hoverborder-radius: 5.2rem;
+
+  /*Herosection*/
+  --hero-h1-Fsize: 2.4rem;
+  --hero-title1-Fsize: 10.5rem;
+  --hero-title1-Fweight: 900;
+  --hero-title2-Fsize: 5rem;
+
+  /*turtial vars*/
+  --turtial-blog-radius: 3.8rem;
+  --turtial-blog-date-color: #756f6f;
+  --turtial-blog-date-Fsize: 1.3rem;
+  --turtial-blog-date-Fweight: 400;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: Inter;
+  font-size: 62.5%;
+  font-weight: 500;
+  background-color: var(--color-main);
+}
+
+.container {
+  padding: 1.5rem 8rem;
+}
+.container {
+    padding: 1.5rem 8rem;
+  }
+  .mheader-burgerM {
+    display: none;
+  }
+  .mheaderonscroll{
+    padding: 2rem 4rem 0rem 8rem !important;
+    margin: 0 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#051256 !important;
+  }
+  .linsho{
+    display: inline-block !important;
+  }
+  .inb{
+    display: inline-block !important;
+  }
+ /*header*/
+ .mheader {
+    display: grid !important;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+      "logo menu"
+      "nav nav";
+  }
+  .mheader-links {
+    display: none;
+    grid-area: nav;
+    position: relative !important;
+    padding: 0 !important;
+  }
+  .mheader-burger {
+    visibility: hidden !important;
+    display: none !important;
+  }
+  .mheader-burgerM {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+  }
+  .mheader-burgerM div {
+    background-color: var(--color-humber);
+    padding: 0.2rem 1.5rem;
+    border-radius: 5rem;
+    transition: 0.3s ease-in-out;
+  }
+
+  .mheader-burgerM :nth-child(1) {
+    margin-bottom: 0.3rem;
+  }
+  .nav {
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    background-color: #05125689;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.189);
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 4;
+  }
+  /*header*/

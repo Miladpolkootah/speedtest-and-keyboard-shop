@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tamrirni</title>
+  </head>
+  <body>
+    <div>
+      <input type="date" name="endDate" />
+      <div class="clock">
+        <span><span class="days">0</span>Days</span>
+        <span><span class="hours">0</span>Hours</span>
+        <span><span class="minutes">0</span>Minutes</span>
+        <span><span class="seconds">0</span>Seconds</span>
+      </div>
+    </div>
+    <script>
+      const endDate = document.querySelector('input[name="endDate"]');
+      const clock = document.querySelector(".clock");
+      let timeInterval;
+      let timeStop = true;
+      const saveValue = localStorage.getItem("countdown") || false;
+      if(saveValue){
+        startClock(saveValue);
+        let inputValue = new Date(saveValue);
+        endDate.valueAsDate=inputValue;
+      }
+      endDate.addEventListener("change", (e) => {
+        e.preventDefault();
+        clearInterval(timeInterval);
+        const temp = new Date(endDate.value);
+        localStorage.setItem("countdown", temp);
+        startClock(temp); 
+        timeStop = true; 
+      });
+
+      function startClock(d) { 
+        function updateCounter() {
+          let tl = (timeLeft(d));
+          if(tl.total<=0){
+            timeStop = false;
+          }
+          for (let pro in tl) {
+            let el = clock.querySelector("." + pro);
+            if (el) {
+              el.innerHTML = tl[pro];
+            }
+          }
+        }
+        updateCounter();
+        if(timeStop){
+            timeInterval = setInterval(updateCounter, 1000)
+        }else{
+            clearInterval(timeInterval);
+        }
+      }
+
+      function timeLeft(d) {
+        const currentDate = new Date();
+        const t = Date.parse(d) - Date.parse(currentDate);
+
+        let sec = Math.floor((t / 1000) % 60);
+        let min = Math.floor((t / 1000 / 60) % 60);
+        let hou = Math.floor((t/(1000*60*60))%24);
+        let day = Math.floor(t / (1000 * 60 * 60 * 24));
+
+        return {
+          "total": t,
+          "days": day,
+          "hours": hou,
+          "minutes": min,
+          "seconds": sec,
+        };
+      }
+    </script>
+  </body>
+</html>

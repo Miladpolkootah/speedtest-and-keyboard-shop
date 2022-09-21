@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TYPO3 | Type fast!</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta
+      name="description"
+      content="Testing Type speed and emporoving your typing skills, turtial to fast typing and the best keyboards youcan use for typing"
+    />
+    <link rel="stylesheet" href="css/scroolbar.css" />
+    <link rel="stylesheet" href="css/animation.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/78918644fb.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!--Main header-->
+    <header class="mheader container-fluid sticky-top" id="head">
+      <article class="mheader-logo">
+        <img src="/assets/logo.svg" alt="Typo3 logo" />
+      </article>
+      <article class="mheader-links hide">
+        <nav class="nav container-fluid navbar">
+          <div class="ssaw">
+            <div
+              class="container-fluid navbar-nav linlin d-flex flex-column flex-lg-row justify-content-between"
+            >
+              <a href="#home" class="hide nav-lin nav-item nav-link mr-5 text-light"
+                >Home</a
+              >
+              <a href="#shop" class="hide nav-lin nav-item nav-link mr-5 text-light"
+                >Shop</a
+              >
+              <a href="#speedtest" class="hide nav-lin nav-item nav-link mr-5 text-light"
+                >SpeedTest</a
+              >
+            </div>
+          </div>
+        </nav>
+      </article>
+      <article class="shop row justify-content-between align-items-center">
+        <a class="col cart" data-toggle="modal" data-target="#cart" href="#">
+          <span class="total-count">0</span>
+          <svg
+            width="41"
+            height="31"
+            viewbox="0 0 41 31"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.4901 0.0102973C1.81715 0.11797 1.21453 0.488564 0.814811 1.04055C0.415095 1.59254 0.251027 2.28071 0.3587 2.95366C0.466373 3.62662 0.836967 4.22924 1.38896 4.62896C1.94094 5.02867 2.62911 5.19274 3.30207 5.08507H10.9142L11.371 6.35376L13.4516 12.6972L15.5323 19.0407C15.7353 19.7004 16.598 20.3094 17.2577 20.3094H35.0194C35.7299 20.3094 36.5418 19.7004 36.7448 19.0407L40.8554 6.35376C41.0584 5.69404 40.7539 5.08507 40.0434 5.08507H17.5114L15.583 1.43123C15.3776 1.01185 15.0605 0.657283 14.6665 0.406574C14.2725 0.155865 13.817 0.0187393 13.3501 0.0102973L3.20057 0.0102973C3.04864 -0.00343243 2.89578 -0.00343244 2.74384 0.0102973C2.64244 0.00420209 2.54076 0.00420209 2.43936 0.0102973L2.4901 0.0102973ZM18.5264 25.3842C17.1054 25.3842 15.989 26.5006 15.989 27.9215C15.989 29.3425 17.1054 30.4589 18.5264 30.4589C19.9473 30.4589 21.0638 29.3425 21.0638 27.9215C21.0638 26.5006 19.9473 25.3842 18.5264 25.3842ZM33.7507 25.3842C32.3298 25.3842 31.2133 26.5006 31.2133 27.9215C31.2133 29.3425 32.3298 30.4589 33.7507 30.4589C35.1716 30.4589 36.2881 29.3425 36.2881 27.9215C36.2881 26.5006 35.1716 25.3842 33.7507 25.3842Z"
+              fill="#DCDCDC"
+            /></svg
+        ></a>
+        <div class="mheader-burger col d-lg-none">
+          <div></div>
+          <div></div>
+        </div>
+      </article>
+    </header>
+    <!--MODAL-->
+    <div
+      class="modal fade"
+      id="cart"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content modal-content__edit">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+            <button
+              type="button"
+              class="close close__edit"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="show-cart table"></table>
+            <div>Total price: $<span class="total-cart"></span></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Order now</button>
+            <button class="btn btn-danger clear-cart">Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--MODAL END-->
+    <!--Main content-->
+    <main class="container-fluid">
+      <!--Hero section-->
+      <section class="herosec container-fluid" id="home">
+        <article class="herosec-art1">
+          <div class="herosec-art1-div1">
+            <h1 class="text-capitalize">Check your typing skills</h1>
+            <h2>TYPO3</h2>
+            <p class="text-capitalize">
+              Test your typing skills and we will give you a score. If your
+              typing is poor, we will help you improve your typing. We will
+              provide you with different methods to learn it like a cheetah on
+              the keyboard push yourself.
+            </p>
+          </div>
+          <div class="herosec-art1-div2">
+            <a href="#"
+              ><img src="/assets/github-1.svg" alt="Typo3 github page"
+            /></a>
+            <a href="#"
+              ><img src="/assets/instagram-1.svg" alt="Typo3 instagram page"
+            /></a>
+          </div>
+          <div class="herosec-art1-div3">
+            <a class="text-light text-decoration-none" href="#SpeedTest"
+              >Lets Strat!</a
+            >
+          </div>
+        </article>
+        <article class="herosec-art2 hide-mobile">
+          <img
+            src="/assets/main-photos.svg"
+            alt="Typo3 hand parcticing for typing main photo"
+          />
+        </article>
+        <article class="herosec-art3 display-4 d-none d-md-inline-block">
+          <h2>NEW MTHODS</h2>
+          <p class="text-capitalize">
+            We provide you with new fast typing methods from around the world
+            and typing history.
+          </p>
+        </article>
+      </section>
+      <!--Product section-->
+      <section class="row sec2 container-fluid" id="shop">
+        <div class="container-fluid">
+          <article class="an col-12 sec2-titles">
+            <h2>Keyboards :</h2>
+            <a href="#">More keyboards</a>
+          </article>
+          <article
+            class="col-12 d-flex flex-row align-items-center justify-content-around flex-wrap sec2-blog mt-5"
+          >
+            <div class="blogp an">
+              <div class="blogp-img">
+                <img src="assets/keyboard2 3.png" alt="fast typing turtials" />
+              </div>
+              <div class="blogp-text">
+                <h3>Rstart</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
+                  laboriosam hic similique modi quos pariatur facere, provident
+                  ...
+                </p>
+              </div>
+              <div
+                class="price d-flex justify-content-between align-items-center w-100"
+              >
+                <div class="">Price: 299.9$</div>
+                <div class="shopingbtn" data-name="Rstart" data-price="299.9">
+                  <a href="#">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_145_12)">
+                        <path
+                          d="M16.7455 14C17.1914 14 17.5775 13.6902 17.6741 13.2549L18.4539 9.74182C18.5181 9.45258 18.7746 9.24675 19.0709 9.24675C19.4199 9.24675 19.7029 8.96379 19.7029 8.61474V8.29582C19.7029 7.77063 19.2771 7.34488 18.7519 7.34488H17.0305C16.6716 7.34488 16.3403 7.15261 16.1622 6.84105L13.393 1.9953C13.133 1.54035 12.5535 1.38219 12.0984 1.642C11.6432 1.9019 11.4849 2.48161 11.7448 2.93681L13.4076 5.84903C13.7883 6.51569 13.3069 7.34488 12.5392 7.34488H7.8555C7.08754 7.34488 6.60619 6.51513 6.98741 5.84847L8.64984 2.9413C8.91063 2.48523 8.75224 1.90409 8.29608 1.64343C7.84007 1.38285 7.25916 1.54125 6.99853 1.99723L4.22978 6.84113C4.05172 7.15264 3.72041 7.34488 3.3616 7.34488H1.64363C1.11844 7.34488 0.692688 7.77063 0.692688 8.29582V8.61474C0.692688 8.96379 0.97565 9.24675 1.3247 9.24675C1.62099 9.24675 1.8775 9.45258 1.9417 9.74182L3.56546 17.0574C3.66312 17.4922 4.04734 17.8009 4.49287 17.8009H12.0961C12.6213 17.8009 13.047 17.3752 13.047 16.85C13.047 16.3248 12.6213 15.899 12.0961 15.899H6.05848C5.58979 15.899 5.18398 15.5735 5.0823 15.116L4.04835 10.4637C3.90955 9.83919 4.38477 9.24675 5.02453 9.24675H15.3705C16.0104 9.24675 16.4857 9.8395 16.3466 10.4641L15.817 12.842C15.6847 13.4362 16.1368 14 16.7455 14ZM23.5038 19.7014C23.5038 19.1762 23.078 18.7504 22.5528 18.7504H21.6524C21.1001 18.7504 20.6524 18.3027 20.6524 17.7504V16.85C20.6524 16.3248 20.2266 15.899 19.7014 15.899C19.1763 15.899 18.7505 16.3248 18.7505 16.85V17.7504C18.7505 18.3027 18.3028 18.7504 17.7505 18.7504H16.8501C16.3249 18.7504 15.8991 19.1762 15.8991 19.7014C15.8991 20.2265 16.3249 20.6523 16.8501 20.6523H17.7505C18.3028 20.6523 18.7505 21.1 18.7505 21.6523V22.5527C18.7505 23.0779 19.1763 23.5037 19.7014 23.5037C20.2266 23.5037 20.6524 23.0779 20.6524 22.5527V21.6523C20.6524 21.1 21.1001 20.6523 21.6524 20.6523H22.5528C23.078 20.6523 23.5038 20.2265 23.5038 19.7014Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clippath id="clip0_145_12">
+                          <rect
+                            width="22.8111"
+                            height="22.8111"
+                            fill="white"
+                            transform="translate(0.692688 0.692627)"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </a>
+                </div>
+                <div class="cartafter hiding" data-name="Rstart-A">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 3V21H20.375V11.7686L17.75 14.34V18.4286H4.625V5.57143H14.0487L16.6737 3H2ZM20.375 3L12.5 10.7143L9.875 8.14286L7.25 10.7143L12.5 15.8571L23 5.57143L20.375 3Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="blogp an">
+              <div class="blogp-img">
+                <img src="assets/keyboard2 2.png" alt="best keyboards" />
+              </div>
+              <div class="blogp-text">
+                <h3>Redragon mini</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
+                  laboriosam hic similique modi quos pariatur facere, provident
+                  ...
+                </p>
+              </div>
+              <div
+                class="price d-flex justify-content-between align-items-center w-100"
+              >
+                <div class="">Price: 499$</div>
+                <div
+                  class="shopingbtn"
+                  data-name="Redragon-mini"
+                  data-price="499"
+                >
+                  <a href="#">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_145_12)">
+                        <path
+                          d="M16.7455 14C17.1914 14 17.5775 13.6902 17.6741 13.2549L18.4539 9.74182C18.5181 9.45258 18.7746 9.24675 19.0709 9.24675C19.4199 9.24675 19.7029 8.96379 19.7029 8.61474V8.29582C19.7029 7.77063 19.2771 7.34488 18.7519 7.34488H17.0305C16.6716 7.34488 16.3403 7.15261 16.1622 6.84105L13.393 1.9953C13.133 1.54035 12.5535 1.38219 12.0984 1.642C11.6432 1.9019 11.4849 2.48161 11.7448 2.93681L13.4076 5.84903C13.7883 6.51569 13.3069 7.34488 12.5392 7.34488H7.8555C7.08754 7.34488 6.60619 6.51513 6.98741 5.84847L8.64984 2.9413C8.91063 2.48523 8.75224 1.90409 8.29608 1.64343C7.84007 1.38285 7.25916 1.54125 6.99853 1.99723L4.22978 6.84113C4.05172 7.15264 3.72041 7.34488 3.3616 7.34488H1.64363C1.11844 7.34488 0.692688 7.77063 0.692688 8.29582V8.61474C0.692688 8.96379 0.97565 9.24675 1.3247 9.24675C1.62099 9.24675 1.8775 9.45258 1.9417 9.74182L3.56546 17.0574C3.66312 17.4922 4.04734 17.8009 4.49287 17.8009H12.0961C12.6213 17.8009 13.047 17.3752 13.047 16.85C13.047 16.3248 12.6213 15.899 12.0961 15.899H6.05848C5.58979 15.899 5.18398 15.5735 5.0823 15.116L4.04835 10.4637C3.90955 9.83919 4.38477 9.24675 5.02453 9.24675H15.3705C16.0104 9.24675 16.4857 9.8395 16.3466 10.4641L15.817 12.842C15.6847 13.4362 16.1368 14 16.7455 14ZM23.5038 19.7014C23.5038 19.1762 23.078 18.7504 22.5528 18.7504H21.6524C21.1001 18.7504 20.6524 18.3027 20.6524 17.7504V16.85C20.6524 16.3248 20.2266 15.899 19.7014 15.899C19.1763 15.899 18.7505 16.3248 18.7505 16.85V17.7504C18.7505 18.3027 18.3028 18.7504 17.7505 18.7504H16.8501C16.3249 18.7504 15.8991 19.1762 15.8991 19.7014C15.8991 20.2265 16.3249 20.6523 16.8501 20.6523H17.7505C18.3028 20.6523 18.7505 21.1 18.7505 21.6523V22.5527C18.7505 23.0779 19.1763 23.5037 19.7014 23.5037C20.2266 23.5037 20.6524 23.0779 20.6524 22.5527V21.6523C20.6524 21.1 21.1001 20.6523 21.6524 20.6523H22.5528C23.078 20.6523 23.5038 20.2265 23.5038 19.7014Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clippath id="clip0_145_12">
+                          <rect
+                            width="22.8111"
+                            height="22.8111"
+                            fill="white"
+                            transform="translate(0.692688 0.692627)"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </a>
+                </div>
+                <div class="cartafter hiding" data-name="Redragon-mini-A">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 3V21H20.375V11.7686L17.75 14.34V18.4286H4.625V5.57143H14.0487L16.6737 3H2ZM20.375 3L12.5 10.7143L9.875 8.14286L7.25 10.7143L12.5 15.8571L23 5.57143L20.375 3Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="blogp an">
+              <div class="blogp-img">
+                <img src="assets/keyboard2 3.png" alt="the best typing rooms" />
+              </div>
+              <div class="blogp-text">
+                <h3>Tsco</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
+                  laboriosam hic similique modi quos pariatur facere, provident
+                  ...
+                </p>
+              </div>
+              <div
+                class="price d-flex justify-content-between align-items-center w-100"
+              >
+                <div class="">Price: 128.9$</div>
+                <div class="shopingbtn" data-name="Tsco" data-price="128.9">
+                  <a href="#">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_145_12)">
+                        <path
+                          d="M16.7455 14C17.1914 14 17.5775 13.6902 17.6741 13.2549L18.4539 9.74182C18.5181 9.45258 18.7746 9.24675 19.0709 9.24675C19.4199 9.24675 19.7029 8.96379 19.7029 8.61474V8.29582C19.7029 7.77063 19.2771 7.34488 18.7519 7.34488H17.0305C16.6716 7.34488 16.3403 7.15261 16.1622 6.84105L13.393 1.9953C13.133 1.54035 12.5535 1.38219 12.0984 1.642C11.6432 1.9019 11.4849 2.48161 11.7448 2.93681L13.4076 5.84903C13.7883 6.51569 13.3069 7.34488 12.5392 7.34488H7.8555C7.08754 7.34488 6.60619 6.51513 6.98741 5.84847L8.64984 2.9413C8.91063 2.48523 8.75224 1.90409 8.29608 1.64343C7.84007 1.38285 7.25916 1.54125 6.99853 1.99723L4.22978 6.84113C4.05172 7.15264 3.72041 7.34488 3.3616 7.34488H1.64363C1.11844 7.34488 0.692688 7.77063 0.692688 8.29582V8.61474C0.692688 8.96379 0.97565 9.24675 1.3247 9.24675C1.62099 9.24675 1.8775 9.45258 1.9417 9.74182L3.56546 17.0574C3.66312 17.4922 4.04734 17.8009 4.49287 17.8009H12.0961C12.6213 17.8009 13.047 17.3752 13.047 16.85C13.047 16.3248 12.6213 15.899 12.0961 15.899H6.05848C5.58979 15.899 5.18398 15.5735 5.0823 15.116L4.04835 10.4637C3.90955 9.83919 4.38477 9.24675 5.02453 9.24675H15.3705C16.0104 9.24675 16.4857 9.8395 16.3466 10.4641L15.817 12.842C15.6847 13.4362 16.1368 14 16.7455 14ZM23.5038 19.7014C23.5038 19.1762 23.078 18.7504 22.5528 18.7504H21.6524C21.1001 18.7504 20.6524 18.3027 20.6524 17.7504V16.85C20.6524 16.3248 20.2266 15.899 19.7014 15.899C19.1763 15.899 18.7505 16.3248 18.7505 16.85V17.7504C18.7505 18.3027 18.3028 18.7504 17.7505 18.7504H16.8501C16.3249 18.7504 15.8991 19.1762 15.8991 19.7014C15.8991 20.2265 16.3249 20.6523 16.8501 20.6523H17.7505C18.3028 20.6523 18.7505 21.1 18.7505 21.6523V22.5527C18.7505 23.0779 19.1763 23.5037 19.7014 23.5037C20.2266 23.5037 20.6524 23.0779 20.6524 22.5527V21.6523C20.6524 21.1 21.1001 20.6523 21.6524 20.6523H22.5528C23.078 20.6523 23.5038 20.2265 23.5038 19.7014Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clippath id="clip0_145_12">
+                          <rect
+                            width="22.8111"
+                            height="22.8111"
+                            fill="white"
+                            transform="translate(0.692688 0.692627)"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </a>
+                </div>
+                <div class="cartafter hiding" data-name="Tsco-A">
+                  <svg
+                  width="24"
+                  height="24"
+                  viewbox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 3V21H20.375V11.7686L17.75 14.34V18.4286H4.625V5.57143H14.0487L16.6737 3H2ZM20.375 3L12.5 10.7143L9.875 8.14286L7.25 10.7143L12.5 15.8571L23 5.57143L20.375 3Z"
+                    fill="white"
+                  />
+                </svg>
+                </div>
+              </div>
+            </div>
+            <div class="blogp an">
+              <div class="blogp-img">
+                <img
+                  src="assets/keyboard2 2.png"
+                  alt="TTT3 fast typing method"
+                />
+              </div>
+              <div class="blogp-text">
+                <h3>TTT3</h3>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
+                  laboriosam hic similique modi quos pariatur facere, provident
+                  ...
+                </p>
+              </div>
+              <div
+                class="price d-flex justify-content-between align-items-center w-100"
+              >
+                <div class="">Price: 399$</div>
+                <div class="shopingbtn" data-name="TTT3" data-price="399">
+                  <a href="#">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewbox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clip-path="url(#clip0_145_12)">
+                        <path
+                          d="M16.7455 14C17.1914 14 17.5775 13.6902 17.6741 13.2549L18.4539 9.74182C18.5181 9.45258 18.7746 9.24675 19.0709 9.24675C19.4199 9.24675 19.7029 8.96379 19.7029 8.61474V8.29582C19.7029 7.77063 19.2771 7.34488 18.7519 7.34488H17.0305C16.6716 7.34488 16.3403 7.15261 16.1622 6.84105L13.393 1.9953C13.133 1.54035 12.5535 1.38219 12.0984 1.642C11.6432 1.9019 11.4849 2.48161 11.7448 2.93681L13.4076 5.84903C13.7883 6.51569 13.3069 7.34488 12.5392 7.34488H7.8555C7.08754 7.34488 6.60619 6.51513 6.98741 5.84847L8.64984 2.9413C8.91063 2.48523 8.75224 1.90409 8.29608 1.64343C7.84007 1.38285 7.25916 1.54125 6.99853 1.99723L4.22978 6.84113C4.05172 7.15264 3.72041 7.34488 3.3616 7.34488H1.64363C1.11844 7.34488 0.692688 7.77063 0.692688 8.29582V8.61474C0.692688 8.96379 0.97565 9.24675 1.3247 9.24675C1.62099 9.24675 1.8775 9.45258 1.9417 9.74182L3.56546 17.0574C3.66312 17.4922 4.04734 17.8009 4.49287 17.8009H12.0961C12.6213 17.8009 13.047 17.3752 13.047 16.85C13.047 16.3248 12.6213 15.899 12.0961 15.899H6.05848C5.58979 15.899 5.18398 15.5735 5.0823 15.116L4.04835 10.4637C3.90955 9.83919 4.38477 9.24675 5.02453 9.24675H15.3705C16.0104 9.24675 16.4857 9.8395 16.3466 10.4641L15.817 12.842C15.6847 13.4362 16.1368 14 16.7455 14ZM23.5038 19.7014C23.5038 19.1762 23.078 18.7504 22.5528 18.7504H21.6524C21.1001 18.7504 20.6524 18.3027 20.6524 17.7504V16.85C20.6524 16.3248 20.2266 15.899 19.7014 15.899C19.1763 15.899 18.7505 16.3248 18.7505 16.85V17.7504C18.7505 18.3027 18.3028 18.7504 17.7505 18.7504H16.8501C16.3249 18.7504 15.8991 19.1762 15.8991 19.7014C15.8991 20.2265 16.3249 20.6523 16.8501 20.6523H17.7505C18.3028 20.6523 18.7505 21.1 18.7505 21.6523V22.5527C18.7505 23.0779 19.1763 23.5037 19.7014 23.5037C20.2266 23.5037 20.6524 23.0779 20.6524 22.5527V21.6523C20.6524 21.1 21.1001 20.6523 21.6524 20.6523H22.5528C23.078 20.6523 23.5038 20.2265 23.5038 19.7014Z"
+                          fill="white"
+                        />
+                      </g>
+                      <defs>
+                        <clippath id="clip0_145_12">
+                          <rect
+                            width="22.8111"
+                            height="22.8111"
+                            fill="white"
+                            transform="translate(0.692688 0.692627)"
+                          />
+                        </clippath>
+                      </defs>
+                    </svg>
+                  </a>
+                </div>
+                <div class="cartafter hiding" data-name="TTT3-A">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewbox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 3V21H20.375V11.7686L17.75 14.34V18.4286H4.625V5.57143H14.0487L16.6737 3H2ZM20.375 3L12.5 10.7143L9.875 8.14286L7.25 10.7143L12.5 15.8571L23 5.57143L20.375 3Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!--Section 2 Slider-->
+       <section class="container-fluid sec4 an d-none d-md-block">
+        <article class="slider container-fluid px-5">
+          <div class="slider--img d-flex flex-row justify-content-center align-items-center">
+            <div class="slider1 slider--item slider__show">MINI KEYBOARDS</div>
+            <div class="slider2 slider--item">GAMING KEYBOARDS</div>
+            <div class="slider3 slider--item">BEST RGB KEYBOARDS</div>
+          </div>
+          <div class="slider--point">
+            <div class="pointe slider--point_active"></div>
+            <div class="pointe"></div>
+            <div class="pointe"></div>
+          </div>
+        </article>
+      </section>
+      <!--Section 3 Speedtes-->
+      <section class="sec3 container-fluid" id="speedtest">
+        <article class="an sec3-texts container-fluid">
+          <h2>Typing Speed Test :</h2>
+        </article>
+        <article class="an sec3-texta">
+          <p class="px-5">The worlds foremost socially distancing testicle surgeon is back to ensure there will never be any Nazi offspring. Yes, its Sniper Elite 5, a double-A series that has, over the years, somehow managed to sneak its way into my heart. Although they may be janky, theres a charm and sense of fun to the Sniper Elite series that makes it hugely endearing.</p>
+          <textarea
+            name="SpeedTest"
+            id="speedtest"
+            placeholder="Type here..."
+            rows="15"
+          ></textarea>
+        </article>
+        <article class="sec3-btn d-flex flex-column flex-sm-row">
+          <div class="timer">00:00:00</div>
+          <p class="result"></p>
+          <button>Start over</button>
+        </article>
+      </section>
+    </main>
+    <footer class="container-fluid">
+      <div class="row row-cols-2 align-items-center justify-content-around">
+        <article class="footer-art1 col">
+          <div>&copy; Designed & Developed By Milad Pol.</div>
+          <div>
+            <a href="#"><img src="assets/github-1.svg" alt="githab page" /></a>
+            <a href="#"
+              ><img src="assets/instagram-1.svg" alt="instagram page"
+            /></a>
+          </div>
+        </article>
+        <article class="footer-art3 col">
+          <div class="d-flex flex-row justify-content-end">
+            <a href="#"><img src="/assets/logo.svg" alt="Typo3 logo" /></a>
+          </div>
+        </article>
+      </div>
+    </footer>
+  </body>
+  <script src="/js/cart.js"></script>
+  <script src="/js/animate.js"></script>
+  <script src="/js/speedtest.js"></script>
+  <script src="/js/header.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/slider.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+    integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+    integrity="sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+</html>
